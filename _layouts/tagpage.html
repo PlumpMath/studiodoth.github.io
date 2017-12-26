@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="post">
   <div class="container mt-3">
-      <div class="page-heading mb-4">Tag: {{ page.tag }}</div>
+      <div class="page-heading mb-4">Tag: {{ page.tag }} ({{site.tags[page.tag] | size}})</div>
       {% for post in site.tags[page.tag] %}
         <div class="row mb-3">
           {% assign date_format = site.minima.date_format | default: "%Y.%m.%d" %}
