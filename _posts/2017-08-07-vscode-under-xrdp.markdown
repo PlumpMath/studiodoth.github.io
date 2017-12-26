@@ -9,7 +9,7 @@ author: simotion
 tags: ["Linux", "VS Code"]
 ---
 
-Ubuntu 16.04.3에 XRDP를 깔아서 이것저것 해보는데 VS Code가 계속 튕기는 문제가 있었다. XRDP를 처음 사용하는거라 설정이 꼬인줄 알았는데, 찾아보니 VS Code의 [문제](https://github.com/Microsoft/vscode/issues/3451) (정확히는 Electron의 [문제](https://github.com/electron/electron/issues/2256))였다. XRDP를 사용하려면 MATE나 Xfce같은 환경이 필요한데, 마침 이 환경에서 문제가 발생한다고 한다....
+Ubuntu 16.04.3에 XRDP를 깔아서 이것저것 해보는데 VS Code가 계속 튕기는 문제가 있었다. XRDP를 처음 사용하는거라 설정이 꼬인줄 알았는데, 찾아보니 [VS Code의 문제](https://github.com/Microsoft/vscode/issues/3451) (정확히는 [Electron의 문제](https://github.com/electron/electron/issues/2256))였다. XRDP를 사용하려면 MATE나 Xfce같은 환경이 필요한데, 마침 이 환경에서 문제가 발생한다고 한다....
 
 {% highlight bash %}
 cd /usr/lib/x86_64-linux-gnu

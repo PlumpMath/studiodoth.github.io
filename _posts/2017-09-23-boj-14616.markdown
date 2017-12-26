@@ -15,7 +15,58 @@ tags: ["Algorithm"]
 먼저 블랙홀의 양 끝과 레이저의 원점에 대한 기울기를 벡터에 담은 후 오름차순으로 정렬한다.
 그런 다음 하나씩 확인하면서 블랙홀일 경우 벡터에 넣거나 빼고, 레이저이면 벡터에 있는 블랙홀들을 모두 제거하는 방식이다.
 
-<script src="https://gist.github.com/StudioDotH/67b5a91f3118f033f82cb9ec42156f33.js?file=sol_1.cpp"></script>
+{% highlight cpp %}
+#include <bits/stdc++.h>
+#define rp pair<double, pair<int,int> >
+#define fi first
+#define se second
+using namespace std;
+vector<rp > work;
+int n,t;
+int t1,t2,t3,t4;
+
+int ans;
+vector<int> laser;
+bool dead[100002];
+
+int main() {
+    scanf("%d",&n);
+    for(int i=0;i<n;i++) {
+        scanf("%d %d %d %d",&t1,&t2,&t3,&t4);
+        double s1=((double)t2)/((double)t1);
+        double s2=((double)t4)/((double)t3);
+        if(s1>s2) swap(s1,s2);
+        work.push_back({s1,{1,i}});
+        work.push_back({s2,{3,i}});
+    }
+    scanf("%d",&t);
+    for(int i=0;i<t;i++) {
+        scanf("%d %d",&t1,&t2);
+        work.push_back({((double)t2)/((double)t1),{2,100001}});
+    }
+    sort(work.begin(),work.end());
+    for(auto it=work.begin();it!=work.end();it++) {
+        auto now = *it;
+        
+        if(dead[now.se.se]) continue;
+        if(now.se.fi == 1) {
+            auto pt = lower_bound(laser.begin(),laser.end(),now.se.se);
+            laser.insert(pt, now.se.se);
+        }
+        else if(now.se.fi == 3) {
+            laser.erase(lower_bound(laser.begin(),laser.end(),now.se.se));
+        }
+        else {
+            for(auto pt=laser.begin();pt!=laser.end();pt++) {
+                ans++;
+                dead[*pt]=true;
+            }
+            laser.clear();
+        }
+    }
+    printf("%d",n-ans);
+}
+{% endhighlight %}
 
 NlgN인것 같긴 한데, 좀 안예쁘다ㅜㅜ 좌표가 양수여서 그렇지 0이 포함되었으면 터지는 방식이기도 하고..
 그래서 다른 풀이를 봤더니 이진 탐색을 써서 해결하는 코드가 대다수였다.
@@ -23,6 +74,59 @@ NlgN인것 같긴 한데, 좀 안예쁘다ㅜㅜ 좌표가 양수여서 그렇�
 레이저를 ccw를 이용해서 정렬하고, 각 블랙홀들에 대해 블랙홀의 범위 내에 존재하는 레이저가 있는지 이진 탐색으로 확인하는 방식이다.
 이건 NlgM인듯.
 
-<script src="https://gist.github.com/StudioDotH/67b5a91f3118f033f82cb9ec42156f33.js?file=sol_2.cpp"></script>
+{% highlight cpp %}
+#include <bits/stdc++.h>
+#define point pair<int,int>
+#define ll long long
+#define fi first
+#define se second
+using namespace std;
 
-외적을 하는 과정에서 10^12 > 2^31이므로 오버플로우에 주의해야 한다.
+vector<point > lasers;
+vector<pair<point,point > > holes;
+int n,k,ans;
+int t1,t2,t3,t4;
+
+bool ccw(point p1,point p2) {
+    ll q1=p1.fi,q2=p1.se,q3=p2.fi,q4=p2.se;
+    return q2*q3<q1*q4;
+}
+bool ccwe(point p1,point p2) {
+    ll q1=p1.fi,q2=p1.se,q3=p2.fi,q4=p2.se;
+    return q2*q3<=q1*q4;
+}
+
+int main() {
+    scanf("%d", &n);
+    for(int i=0;i<n;i++) {
+        scanf("%d %d %d %d",&t1,&t2,&t3,&t4);
+        point p1={t1,t2}, p2={t3,t4};
+        if(ccw(p2,p1)) swap(p1,p2);
+        holes.push_back({p1,p2});
+    }
+    scanf("%d",&k);
+    for(int i=0;i<k;i++) {
+        scanf("%d %d",&t1,&t2);
+        lasers.push_back({t1,t2});
+    }
+    sort(lasers.begin(),lasers.end(),ccw);
+    for(auto it=holes.begin();it!=holes.end();it++) {
+        auto now=*it;
+        int st=0,en=k-1;
+        while(st<=en) {
+            int mid=(st+en)/2;
+            if(ccwe(now.fi,lasers[mid])&&ccwe(lasers[mid],now.se)) {
+                ans++;
+                break;
+            }
+            else if(ccw(now.se,lasers[mid]))
+                en=mid-1;
+            else
+                st=mid+1;
+        }
+    }
+    printf("%d",n-ans);
+}
+{% endhighlight %}
+
+외적을 하는 과정에서 $$10^{12} > 2^{31}$$이므로 오버플로우에 주의해야 한다.
