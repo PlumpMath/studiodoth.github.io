@@ -1,0 +1,9 @@
+<span class="gray-text mb-2">
+    <i class="fa fa-tags mr-sm-1" aria-hidden="true"></i>
+    {% for tag in page.tags %}
+        {% capture tag_name %}{{ tag }}{% endcapture %}
+        <a href="/tag/{{ tag_name }}">
+            <span class="badge badge-info">{{ tag_name }}</span>
+        </a>
+    {% endfor %}
+</span>

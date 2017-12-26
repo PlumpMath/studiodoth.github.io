@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="container mt-3">
+        <div class="page-heading mb-4">Tag List</div>
+        {% for tag in site.tags %}
+        <h4>
+            <a href="/tag/{{tag[0]}}"><i class="fa fa-tag" aria-hidden="true"></i> {{tag[0]}}</a>
+            <small class="gray-text">글 {{tag[1] | size}}개</small>
+        </h4>
+        {% endfor %}
+  </div>
+</div>
+

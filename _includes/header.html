@@ -1,0 +1,73 @@
+<div class="color-edge-bar"></div>
+<header class="site-header" role="banner">
+  <nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav mr-auto mt-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{{site.url}}">
+              <i class="fa fa-home mr-sm-1" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{site.url}}/archive">
+              <i class="fa fa-list mr-sm-1" aria-hidden="true"></i>
+              Archive
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{site.url}}/tags">
+              <i class="fa fa-tags mr-sm-1" aria-hidden="true"></i>
+              Tags
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          {% if site.github_username %}
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/{{ site.github_username }}">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.twitter_username %}
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/{{ site.twitter_username }}">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.facebook_username %}
+          <li class="nav-item">
+            <a class="nav-link" href="https://facebook.com/{{ site.facebook_username }}">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+          {% endif %}
+          {% if site.email %}
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:{{site.email}}">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS & CSS includes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js" integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs="
+    crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</header>

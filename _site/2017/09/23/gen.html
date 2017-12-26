@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  
+    <!-- http://longqian.me/2017/02/09/github-jekyll-tag/ -->
+
+
+
+
+
+
+  
+
+  <meta charset="utf-8">
+  <meta lang="ko">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="유전 알고리즘 공부한 내용 정리">
+  <title>유전 알고리즘 공부한 내용 정리</title>
+
+  <meta name="description" content="이 글은 ‘쉽게 배우는 유전 알고리즘 (문병로 저)’를 읽고 정리한 내용입니다. 문제가 되면 삭제하겠습니다.">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="canonical" href="http://localhost:4000/2017/09/23/gen.html">
+  <link rel="alternate" type="application/rss+xml" title="mitsuha.co" href="/%20/feed.xml"> 
+</head>
+  <body>
+    <div id="header-body">
+      <div class="color-edge-bar"></div>
+<header class="site-header" role="banner">
+  <nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav mr-auto mt-0">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000">
+              <i class="fa fa-home mr-sm-1" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000/archive">
+              <i class="fa fa-list mr-sm-1" aria-hidden="true"></i>
+              Archive
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000/tags">
+              <i class="fa fa-tags mr-sm-1" aria-hidden="true"></i>
+              Tags
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/studiodoth">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://facebook.com/jhnohjhnoh">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:studiodoth@sasa.hs.kr">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS & CSS includes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js" integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs="
+    crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</header>
+      <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="container mt-4">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a href="">유전 알고리즘 공부한 내용 정리</a>
+      </h1>
+      <p class="post-meta">
+        <time datetime="2017-09-23T23:25:00+09:00" itemprop="datePublished">
+           Sep 23, 2017
+        </time>
+        • <span class="reading-time" title="Estimated read time">
+    
+    
+        6분 분량
+    
+</span>
+      
+      
+      </p>
+      <div class="post-tags mt-1 mb-2">
+        <span class="gray-text mb-2">
+    <i class="fa fa-tags mr-sm-1" aria-hidden="true"></i>
+    
+        
+        <a href="/tag/Genetic Algorithms">
+            <span class="badge badge-info">Genetic Algorithms</span>
+        </a>
+    
+        
+        <a href="/tag/Algorithm">
+            <span class="badge badge-info">Algorithm</span>
+        </a>
+    
+</span>
+      </div>
+    </header>
+
+    <div class="post-content mb-4" itemprop="articleBody" id="post-content">
+      <blockquote>
+  <p>이 글은 ‘쉽게 배우는 유전 알고리즘 (문병로 저)’를 읽고 정리한 내용입니다.
+문제가 되면 삭제하겠습니다.</p>
+</blockquote>
+
+<h1 id="연산-기법">연산 기법</h1>
+
+<h2 id="1-선택-연산">1. 선택 연산</h2>
+
+<ul>
+  <li>품질 비례 룰렛휠 선택</li>
+</ul>
+
+<p>적합도 (Fitness)에 비례해 유전자가 선택될 확률을 지정한다. (ie. 비용(Cost)에 반비례)</p>
+
+<p><script type="math/tex">C_i</script>: i번째 유전자의 비용 <br />
+<script type="math/tex">C_w</script>: 최대의 비용 (최악의 적합도) <br />
+<script type="math/tex">C_b</script>: 최소의 비용 (최고의 적합도) <br /></p>
+
+<p>이라 할 때, 해집단 내 i번째 유전자의 적합도는 다음과 같이 정의된다.</p>
+
+<script type="math/tex; mode=display">f_i =(C_w - C_i) + {C_w-C_i \over k-1}</script>
+
+<p>여기서 <script type="math/tex">k</script>는 선택압으로, 최소 비용의 염색체가 최대 비용의 염색체에 비해 <script type="math/tex">k</script>배의 높은 확률으로 선택될 수 있도록 한다. <script type="math/tex">f_i</script>는 <script type="math/tex">C_i</script>에 대한 선형의 관계를 가지게 된다.
+i번째 염색체가 선택될 확률 <script type="math/tex">p_i</script>는 다음과 같다.</p>
+
+<script type="math/tex; mode=display">p_i = {C_i \over {\sum\limits_{k} C_k}}</script>
+
+<p>이후 <script type="math/tex">[0,1)</script>에서 임의의 실수를 고른 후, 대응되는 범위에 해당되는 염색체를 선택한다. <br />
+(i번째 유전자가 가지는 범위는 
+<script type="math/tex">\left[ \sum \limits_{k=1}^{i-1} p  _{i},\right. \left. \sum \limits_{k=1}^{i} p  _{i} \right)</script>
+이다.)</p>
+
+<ul>
+  <li>토너먼트 선택</li>
+</ul>
+
+<p>두 염색체 <script type="math/tex">x_1</script>, <script type="math/tex">x_2</script>에 대해, 일관성을 잃지 않고 <script type="math/tex">x_1</script>이 <script type="math/tex">x_2</script>보다 우월하다 가정하자.
+임의의 실수 <script type="math/tex">p \in [0,1)</script>를 선택하자. <script type="math/tex">p \lt k</script>이면 을 선택하고, <script type="math/tex">p \geq k</script>이면 를 선택하자.
+여기서 <script type="math/tex">k</script>는 선택압으로, 어떤 비율로 우월한 염색체를 선택할 것인지 결정한다. <script type="math/tex">k \lt 0.5</script>인 <script type="math/tex">k</script>를 선택하는 것은 좋지 못한 선택일 것이다.</p>
+
+<ul>
+  <li>순위 기반 선택</li>
+</ul>
+
+<p>품질 기반 룰렛휠 선택과 유사하지만, 적합도 차이에 의해 선택 확률이 급격하게 변하지 않고 균일하게 변화하는 방식이다.
+<script type="math/tex">i</script>번째로 비용이 작은 염색체, 즉 <script type="math/tex">i</script>등의 염색체는 다음과 같은 적합도를 가진다.</p>
+
+<script type="math/tex; mode=display">f_i = M+(m-M) \times {i-1 \over n-1}</script>
+
+<p><script type="math/tex">M</script>은 최대 적합도, <script type="math/tex">m</script>은 최소 적합도이다.
+룰렛휠 선택과 마찬가지로 <script type="math/tex">i</script>등의 염색체가 선택될 확률 <script type="math/tex">p_i</script>는 다음과 같다.</p>
+
+<script type="math/tex; mode=display">p_i = {C_i \over {\sum\limits_{k} C_k}}</script>
+
+<ul>
+  <li>공유 선택</li>
+</ul>
+
+<p>세대가 지나도 유전자의 다양성이 유지될 수 있도록 하기 위해 고안된 선택 연산이다.
+공유 선택에서의 적합도 <script type="math/tex">F_i</script>는 다음과 같이 정의된다.</p>
+
+<script type="math/tex; mode=display">F_i = {f_i \over {\sum \limits_{j=1}^{n} s(d_{i, j})}}</script>
+
+<p><script type="math/tex">f_i</script>는 일반적인 적합도, <script type="math/tex">d_{i, j}</script>는 염색체 <script type="math/tex">i, j</script> 사이의 차이이다.</p>
+
+<p>두 염색체의 차이는 기준에 따라 유전자형 공유와 표현형 공유로 나뉜다. 유전자형 공유는 염색체의 모양 차이, 표현형 공유는 표현형 값의 차이에 따라 <script type="math/tex">d_{i, j}</script>를 결정한다.
+<script type="math/tex">s( \cdot )</script>는 공유 함수로, 두 염색체 사이의 차가 작을수록 (<script type="math/tex">d_{i, j}</script>가 작을수록) 큰 값을 가지는 함수이다. 그래야 염색체가 유사할수록 적합도가 작아지기 때문이다. 
+예시로 <script type="math/tex">s(d) = 1-({d / \sigma})^2</script>가 있다. (<script type="math/tex">\sigma</script>는 해집단 내의 최대 <script type="math/tex">d_{i, j}</script>)</p>
+
+<h1 id="2-교차-연산">2. 교차 연산</h1>
+
+<p>교차는 두 부모 염색체의 부분을 교환하며 결합해서 새로운 자식 염색체를 만드는 연산이다.</p>
+
+<ul>
+  <li>일점 교차 (One-point Crossover)</li>
+</ul>
+
+<p>하나의 지점에서 교차를 만든다. 길이가 <script type="math/tex">n</script>인 염색체에 대해 <script type="math/tex">n-1</script>개의 교차가 가능하다.</p>
+
+<ul>
+  <li>다점 교차 (Multi-point Crossover)</li>
+</ul>
+
+<p>여러 점에 대해 교차를 시행한다. 길이가 <script type="math/tex">n</script>인 염색체에 대해 <script type="math/tex">k</script>점 교차를 시행하는 경우의 수는 <script type="math/tex">{}_{n-1}C_{k}</script>이다. 가장 오른쪽 유전자의 오른쪽도 교차점이 되도록 허용하면 <script type="math/tex">{}_{n}C_{k}</script>가지인데, 이 방식이 더 합리적이다.</p>
+
+<p>다점 교차는 더 넓은 공간에 대해 탐색할 수 있는 장점이 있지만, 교란이 강하기 때문에 스키마가 파손될 확률이 높다.</p>
+
+<ul>
+  <li>균등 교차 (Uniform Crossover)</li>
+</ul>
+
+<p>염색체 <script type="math/tex">s_1, s_2</script> 에 대해 균등 교차를 시행하자. 각 유전자에 대해 <script type="math/tex">[0, 1]</script>에서 난수를 발생시킨 후, 그 값이 특정 값 (<script type="math/tex">P_0</script>) 이상이면 <script type="math/tex">s_1</script>에서 유전자를 가져오고, <script type="math/tex">P_0</script> 미만이면 <script type="math/tex">s_2</script>에서 유전자를 가져온다.
+균등 교차는 스키마의 결합 형태가 다양한 반면, 교란이 크기에 수렴에 시간이 오래 걸린다.</p>
+
+<ul>
+  <li>산술적 교차 (Arthimetic Crossover)</li>
+</ul>
+
+<p>유전자가 실수로 표현되는 염색체에 대한 교차이다. 그냥 평균을 취한다.</p>
+
+<ul>
+  <li>간선 재조합 (Edge Recombination)</li>
+</ul>
+
+<p>간선 재조합은 TSP를 위해 개발된 연산이다. 
+각 도시에 대해 부모 염색체 <script type="math/tex">s_1, s_2</script>에서 인접한 도시들의 합집합을 구한다.
+인접 도시 수는 모두 겹칠 경우 최소 2개, 하나도 겹치지 않을 경우 최대 4개이다.
+자식 염색체를 만들기 위해서는 시작 도시를 구하고,
+현재 도시의 인접 도시 목록에 있는 도시 중 가장 인접 도시수가 적은 도시를 고른다 (여러 개일 경우 임의로 하나를 선택한다).
+이 과정을 도시의 개수만큼 반복하면 도시를 순회하는 순열을 만들게 된다.</p>
+
+<ul>
+  <li>PMX (Partially Matched Crossover)</li>
+</ul>
+
+<p>염색체가 순열로 표현되는 경우에 대한 교차 연산이다.부모해 <script type="math/tex">s_1, s_2</script>에 임의의 교차선 2개를 그은 후, 두 교차선 사이의 구간은 <script type="math/tex">s_1</script>에서 가져온다.
+나머지 구간은 <script type="math/tex">s_2</script>에서 가져오되, 중복되는 경우 <script type="math/tex">s_1</script>에서 해당 값을 가지는 위치와 같은 위치의 <script type="math/tex">s_2</script>에서 가져온다.</p>
+
+<p>아래 예시의 경우 겹치는 숫자에 대해 <script type="math/tex">0 \rightarrow 3 \rightarrow 5</script>, <script type="math/tex">6 \rightarrow 1</script>의 과정을 거쳐 다른 값을 가져온다.</p>
+
+<p><img src="http://www.aistudy.com/biology/genetic/images/PMX.gif" alt="" /></p>
+
+<ul>
+  <li>Cohoon과 Paris의 볼록 교차</li>
+</ul>
+
+<p>2차원 염색체를 위한 교차 연산이다. 이차원 행렬 모양인 부모해 <script type="math/tex">s_1</script>에서 정사각형을 잘라낸 후, 다른 부모해 <script type="math/tex">s_2</script>의 해당 부분으로 보충한다.
+겹치는 값이 있을 경우 PMX와 같은 원리로 그 값을 갖는 <script type="math/tex">s_1</script>의 위치와 같은 위치의 <script type="math/tex">s_2</script>의 값을 가져온다.</p>
+
+<p><img src="http://www.aistudy.com/biology/genetic/images/Cohoon_Paris.gif" alt="" /></p>
+
+<h2 id="스키마">스키마</h2>
+
+<p>유전 알고리즘의 작동 이론에서 가장 중요한 인자 중 하나가 스키마라고 한다.</p>
+
+<h1 id="용어">용어</h1>
+
+<p>길이: 스키마의 패턴 길이 <br />
+차수: 스키마에서 고정된 값의 개수 (스키마 **3*0*1의 차수는 3이다)</p>
+
+<h1 id="1-스키마-정리와-빌딩-블록-가설">1. 스키마 정리와 빌딩 블록 가설</h1>
+
+<ul>
+  <li>스키마 정리</li>
+</ul>
+
+<p>유전 알고리즘의 세대 t+1에서의 임의의 스키마 H를 포함하는 염색체의 개수의 기대치는 다음과 같다.</p>
+
+<script type="math/tex; mode=display">m(H,t+1) \geq m(H,t) \cdot \frac{f(H,t)}{\zeta (t)} [ 1-P_c \frac{\delta (H)}{l-1} -o(H)P_m ]</script>
+
+<p><script type="math/tex">m(H, t)</script>: 세대 <script type="math/tex">t</script>에서 스키마 <script type="math/tex">H</script>를 포함하는 염색체의 수 <br />
+<script type="math/tex">f(H, t)</script>: 세대 <script type="math/tex">t</script>에서 스키마 <script type="math/tex">H</script>를 포함하는 염색체의 평균 적합도 <br />
+<script type="math/tex">\zeta (t)</script>: 세대 <script type="math/tex">t</script>에서 모든 염색체의 평균 적합도 <br />
+<script type="math/tex">P_c</script>: 교차 확률 <br />
+<script type="math/tex">P_m</script>: 변이 확률 <br />
+<script type="math/tex">\delta(H)</script>: 스키마 <script type="math/tex">H</script>의 길이 <br />
+<script type="math/tex">o(H)</script>: 스키마 <script type="math/tex">H</script>의 차수 <br />
+<script type="math/tex">l</script>: 염색체의 길이</p>
+
+<p><script type="math/tex">\frac{\delta (H)}{l-1}</script>는 스키마 중간에 자름선이 놓일 확률, 즉 스키마가 파괴될 확률이다.
+마찬가지로 <script type="math/tex">o(H)P_m</script>도 스키마의 고정된 값이 변할 확률로, 스키마가 파괴될 확률이다.</p>
+
+<p>이 두 가지 사건이 일어나지 않으면서 다음 세대에서 유전자가 선택받을 수 있어야 하기 때문에 위와 같은 정리가 나오는 것이다.</p>
+
+<ul>
+  <li>스키마와 공간의 대응</li>
+</ul>
+
+<p>길이가 3인 이진 염색체를 생각해 보자. 각 자리를 하나의 차원으로 생각하면, 전체 염색체는 0 또는 1로 이루어진 3차원 공간으로 생각할 수 있다.
+그렇다면 스키마는 고정된 값의 개수에 따라 점, 선 또는 면으로 표현될 수 있을 것이다.
+예를 들어 스키마 ‘*0*‘은 <script type="math/tex">y=0</script>인 면, ‘*10’은 <script type="math/tex">y=1,x=0</script>인 점, ‘110’은 <script type="math/tex">(1, 1, 0)</script>인 점에 대응할 수 있을 것이다.</p>
+
+<p><img src="http://www.aistudy.com/biology/genetic/images/%EC%8A%A4%ED%82%A4%EB%A7%88_%EB%8C%80%EC%9D%91%EA%B3%B5%EA%B0%841.gif" alt="" /></p>
+
+<ul>
+  <li>빌딩 블록 가설</li>
+</ul>
+
+<p>빌딩 블록 가설은 유전 알고리즘의 동작 원리를 건설적인 측면에서 설명하려는 가설로, 작은 스키마들이 합쳐지면서 점점 더 큰 스키마로 발전한다는 것이다.
+처음에는 특징 없이 무작위로 분포하던 작은 스키마들이, 선택과 교차를 거치면서 더 큰 스키마로 발전한다는 것이다.</p>
+
+<p>증명을 하기도 힘들고 스키마의 발달 과정을 파악하기 어렵기 때문에 가설이라고 한다.</p>
+
+<h1 id="2-스키마의-생존-확률">2. 스키마의 생존 확률</h1>
+
+<ul>
+  <li>스키마의 생존 확률</li>
+</ul>
+
+<p>교차를 한 번 거치고도 스키마가 살아남을 방법을 생각해보자. 생각보다 간단하다.
+모든 고정된 유전자 사이의 고정점의 개수가 짝수이면 살아남을 수 있다. 갔다가 왔다가,.. 를 반복한다고 생각하면 자명하다.</p>
+
+<p><script type="math/tex">r</script>차 스키마의 고정된 점들을 <script type="math/tex">0, 1, .., r-1</script>이라 하고, <script type="math/tex">0</script>번 고정점으로부터 <script type="math/tex">i</script>번째 고정점까지의 거리를 <script type="math/tex">L_i</script>라 하자.
+(<script type="math/tex">i: 0, 1, .., r-1</script>) 그러면 <script type="math/tex">m</script>차 스키마에서 <script type="math/tex">k</script>점 교차를 사용할 경우</p>
+
+<blockquote>
+  <p><a href="http://www.aistudy.com/biology/genetic/operator_moon.htm">이미지 출처 (aistudy.net)</a></p>
+</blockquote>
+
+    </div>
+    
+      
+
+    
+  </div>
+</article>
+        </div>
+      </main>
+    </div>
+    <!--<footer class="site-footer">
+  <small>
+    Powered by
+    <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+    and theme based on
+    <a href="https://github.com/myJekyll/sustain">sustain</a>. Made by simotion with ♥
+  </small>
+  <div class="color-edge-bar"></div>
+</footer>
+-->
+  </body>
+</html>

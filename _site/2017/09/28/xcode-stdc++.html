@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  
+    <!-- http://longqian.me/2017/02/09/github-jekyll-tag/ -->
+
+
+
+
+
+
+  
+
+  <meta charset="utf-8">
+  <meta lang="ko">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Xcode에 bits/stdc++.h 설치하기">
+  <title>Xcode에 bits/stdc++.h 설치하기</title>
+
+  <meta name="description" content="stdc++.h를 Xcode의 include 폴더에 넣어주면 된다. 아래 스크립트를 받아서 실행해주자.">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="canonical" href="http://localhost:4000/2017/09/28/xcode-stdc++.html">
+  <link rel="alternate" type="application/rss+xml" title="mitsuha.co" href="/%20/feed.xml"> 
+</head>
+  <body>
+    <div id="header-body">
+      <div class="color-edge-bar"></div>
+<header class="site-header" role="banner">
+  <nav class="navbar navbar-expand navbar-light">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav mr-auto mt-0">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000">
+              <i class="fa fa-home mr-sm-1" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000/archive">
+              <i class="fa fa-list mr-sm-1" aria-hidden="true"></i>
+              Archive
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4000/tags">
+              <i class="fa fa-tags mr-sm-1" aria-hidden="true"></i>
+              Tags
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/studiodoth">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://facebook.com/jhnohjhnoh">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:studiodoth@sasa.hs.kr">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS & CSS includes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js" integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs="
+    crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</header>
+      <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="container mt-4">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a href="">Xcode에 bits/stdc++.h 설치하기</a>
+      </h1>
+      <p class="post-meta">
+        <time datetime="2017-09-28T23:04:00+09:00" itemprop="datePublished">
+           Sep 28, 2017
+        </time>
+        • <span class="reading-time" title="Estimated read time">
+    
+    
+        1분 분량
+    
+</span>
+      
+      
+      </p>
+      <div class="post-tags mt-1 mb-2">
+        <span class="gray-text mb-2">
+    <i class="fa fa-tags mr-sm-1" aria-hidden="true"></i>
+    
+        
+        <a href="/tag/XCode">
+            <span class="badge badge-info">XCode</span>
+        </a>
+    
+</span>
+      </div>
+    </header>
+
+    <div class="post-content mb-4" itemprop="articleBody" id="post-content">
+      <p>stdc++.h를 Xcode의 include 폴더에 넣어주면 된다. 아래 스크립트를 받아서 실행해주자.</p>
+
+<script src="https://gist.github.com/StudioDotH/6272b746824417680502dea708b4be28.js"></script>
+
+
+    </div>
+    
+      
+
+    
+  </div>
+</article>
+        </div>
+      </main>
+    </div>
+    <!--<footer class="site-footer">
+  <small>
+    Powered by
+    <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+    and theme based on
+    <a href="https://github.com/myJekyll/sustain">sustain</a>. Made by simotion with ♥
+  </small>
+  <div class="color-edge-bar"></div>
+</footer>
+-->
+  </body>
+</html>
