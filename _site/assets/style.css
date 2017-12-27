@@ -6,6 +6,9 @@ body, table, div, p {
 .post-list {
     list-style-type: none;
 }
+.post-content {
+    overflow: hidden;
+}
 .col-title-meta {
     width: 110px;
     text-align: right;
@@ -54,6 +57,45 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+@media (max-width: 360px) {
+    .nav-links {
+        display: none;
+    }
+}
+@media (min-width: 360px) {
+    .nav-links-inverse {
+        display: none;
+    }
+}
+@media (max-width: 420px) {
+    .footer-text {
+        display: none;
+    }
+}
+@media (min-width: 420px) {
+    .footer-text-inverse {
+        display: none;
+    }
+}
+@media (max-width: 275px) {
+    .nav-main-text {
+        display: none;
+    }
+}
+.site-footer, .push {
+  height: 29px;
+}
+.site-footer {
+    text-align: center;
+}
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -29px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
 }
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
@@ -114,45 +156,11 @@ img {
 .highlight .vi { color: #aa0000 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
-@media (max-width: 360px) {
-    .nav-links {
-        display: none;
-    }
+h1,h2,h3 {
+    color: #2fb1c7;
+    margin-bottom: 15px;
 }
-@media (min-width: 360px) {
-    .nav-links-inverse {
-        display: none;
-    }
+ul {
+    padding-left: 20px;
+    list-style-type: square;
 }
-@media (max-width: 420px) {
-    .footer-text {
-        display: none;
-    }
-}
-@media (min-width: 420px) {
-    .footer-text-inverse {
-        display: none;
-    }
-}
-@media (max-width: 275px) {
-    .nav-main-text {
-        display: none;
-    }
-}
-.site-footer, .push {
-  height: 29px;
-}
-.site-footer {
-    text-align: center;
-}
-.wrapper {
-    min-height: 100%;
-  
-    /* Equal to height of footer */
-    /* But also accounting for potential margin-bottom of last child */
-    margin-bottom: -29px;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
