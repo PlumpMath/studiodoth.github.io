@@ -24,7 +24,7 @@
   <link rel="alternate" type="application/rss+xml" title="mitsuha.co" href="/%20/feed.xml"> 
 </head>
   <body>
-    <div id="header-body">
+    <div class="wrapper">
       <div class="color-edge-bar"></div>
 <header class="site-header" role="banner">
   <nav class="navbar navbar-expand navbar-light">
@@ -34,23 +34,23 @@
           <li class="nav-item">
             <a class="nav-link" href="/">
               <i class="fa fa-home mr-sm-1" aria-hidden="true"></i>
-              Home
+              <span class="nav-main-text">Home</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/archive">
               <i class="fa fa-list mr-sm-1" aria-hidden="true"></i>
-              Archive
+              <span class="nav-main-text">Archive</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/tags">
               <i class="fa fa-tags mr-sm-1" aria-hidden="true"></i>
-              Tags
+              <span class="nav-main-text">Tags</span>
             </a>
           </li>
         </ul>
-        <ul class="navbar-nav navbar-right">
+        <ul class="navbar-nav navbar-right nav-links">
           
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/studiodoth">
@@ -93,7 +93,7 @@
   <link rel="stylesheet" href="/assets/style.css" />
 </header>
       <main class="page-content" aria-label="Content">
-        <div class="wrapper">
+        <div>
           <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="container mt-4">
     <header class="post-header">
@@ -249,16 +249,25 @@
 </article>
         </div>
       </main>
+      <div class="push"></div>
     </div>
-    <!--<footer class="site-footer">
+    <footer class="site-footer">
   <small>
     Powered by
-    <a href="https://github.com/jekyll/jekyll">Jekyll</a>
-    and theme based on
-    <a href="https://github.com/myJekyll/sustain">sustain</a>. Made by simotion with ♥
+    <span class="footer-text">
+      <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+      and theme inspired by
+      <a href="https://github.com/myJekyll/sustain">sustain</a>.
+    </span>
+    <span class="footer-text-inverse">
+      <a href="https://github.com/jekyll/jekyll">Jekyll</a>.
+    </span>
+    By 
+    <a href="mailto:studiodoth@sasa.hs.kr">simotion</a>
+     with ♥
   </small>
   <div class="color-edge-bar"></div>
 </footer>
--->
+
   </body>
 </html>

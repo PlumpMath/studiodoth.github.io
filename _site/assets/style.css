@@ -1,7 +1,7 @@
-@import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700);
 body, table, div, p {
-    font-family: ‘Roboto’, ‘Spoqa Han Sans’, ‘Spoqa Han Sans JP’, ‘Sans-serif’;
+    font-family: Roboto, 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
 }
 .post-list {
     list-style-type: none;
@@ -11,7 +11,7 @@ body, table, div, p {
     text-align: right;
 }
 .color-edge-bar {
-    background-color: rgb(47, 177, 199);
+    background-color: #2fb1c7;
     height: 5px;
 }
 div.page-heading {
@@ -22,7 +22,7 @@ div.page-heading {
     padding-bottom: 60px;
 }
 a, a:link, a:hover, a:visited, a:active {
-    color: rgb(47, 177, 199);
+    color: #2fb1c7;
     text-decoration: none;
 }
 blockquote {
@@ -113,3 +113,46 @@ img {
 .highlight .vg { color: #aa0000 } /* Name.Variable.Global */
 .highlight .vi { color: #aa0000 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+@media (max-width: 360px) {
+    .nav-links {
+        display: none;
+    }
+}
+@media (min-width: 360px) {
+    .nav-links-inverse {
+        display: none;
+    }
+}
+@media (max-width: 420px) {
+    .footer-text {
+        display: none;
+    }
+}
+@media (min-width: 420px) {
+    .footer-text-inverse {
+        display: none;
+    }
+}
+@media (max-width: 275px) {
+    .nav-main-text {
+        display: none;
+    }
+}
+.site-footer, .push {
+  height: 29px;
+}
+.site-footer {
+    text-align: center;
+}
+.wrapper {
+    min-height: 100%;
+  
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -29px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
